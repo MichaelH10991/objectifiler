@@ -20,7 +20,7 @@ module.exports = (there, ignore = ["index.js", "utils"]) => {
         if (mod.init && !config) {
           return exporter;
         }
-        // use the path to assign the config
+        // TODO: use the path to assign the config
         // e.g. if file exists under nested/foo
         // it should look for config under that file
         // also need to figure out how to export functions

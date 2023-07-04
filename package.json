@@ -1,11 +1,19 @@
 {
-  "name": "objectifier",
+  "name": "@iobxt/objectifiler",
   "version": "1.0.0",
-  "description": "",
+  "description": "A handy exporter module which aims to alevate dev effort",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelH10991/objectifiler.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MichaelH10991/objectifiler/issues"
+  },
+  "homepage": "https://github.com/MichaelH10991/objectifiler#readme"
 }

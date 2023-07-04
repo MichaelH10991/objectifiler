@@ -1,6 +1,8 @@
-# objectifiler
+# @iobxt/objectifiler
 
 A handy exporter module which aims to alevate dev effort
+
+Disclaimer: This was a quick braindump.
 
 It iterates over files in the provided directiory and exports them as an object. You may also provide a configuration object which will be used to configure each module, provided the module has an init function.
 
@@ -12,7 +14,7 @@ if your modules need to be initialised it will call the init function of each, p
 
 # Usage
 
-Given the following directory sructure
+Given the following directory sructure;
 
 ```
 src
@@ -28,7 +30,7 @@ src
 index.js
 ```
 
-and the index.js looks like this
+and the index.js looks like this;
 
 ```javascript
 const objectifier = require("objectifier");
