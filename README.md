@@ -1,10 +1,28 @@
 # @iobxt/objectifiler
 
-A handy exporter module which aims to alevate dev effort
+A handy exporter module which aims to alevate dev effort.
+
+# Installation
+
+`npm i @iobxt/objectifiler`
+
+# Usage
+
+Once the package has been installed you can drop it into an `index.js` file like so;
+
+```javascript
+const objectifiler = require("@iobxt/objectifiler");
+
+module.exports = objectifiler(__dirname);
+```
+
+When the `index.js` file is consumed, all the files and directories will be exported as an object.
+
+# Description
 
 Disclaimer: This was a quick braindump.
 
-It iterates over files in the provided directiory and exports them as an object. You may also provide a configuration object which will be used to configure each module, provided the module has an init function.
+This thing iterates over files in the provided directiory and exports them as an object. You may also provide a configuration object which will be used to configure each module, provided the module has an init function.
 
 You can use this exporter one of two ways.
 
@@ -18,10 +36,6 @@ Given the following directory sructure;
 
 ```
 src
-  withinit
-    nested
-      withInit.js
-    withInit.js
   without
     foobar
       foo.js
@@ -30,7 +44,7 @@ src
 index.js
 ```
 
-and the index.js looks like this;
+and the top level index.js looks like this;
 
 ```javascript
 const objectifier = require("objectifier");
@@ -38,17 +52,20 @@ const objectifier = require("objectifier");
 module.exports = objectifier(__dirname);
 ```
 
-You should be able to do this
+Upon importing `src` like this;
+
+`const foo = require("./src");`
+
+You should have an object that looks like this;
 
 ```javascript
-const foo = require("./src");
-
-const bar = foo.withInit.init({ aName: { foo: "bar" } });
-
-bar.without.foo();
-bar.without.bar();
-bar.without.foobar.foo();
-
-bar.withInit.aName.foo();
-bar.withInit.nested.aName.foo();
+{
+  without: {
+    foobar: {
+      foo: () => {}
+    },
+    bar: () => {}
+  },
+  foo: () => {}
+}
 ```
