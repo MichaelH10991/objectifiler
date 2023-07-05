@@ -4,7 +4,7 @@
   "description": "A handy exporter module which aims to alevate dev effort",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/jest/bin/jest.js test/",
+    "test": "node node_modules/.bin/jest tests/",
     "publish:major": "npm version major",
     "publish:minor": "npm version minor",
     "publish:patch": "npm version patch"

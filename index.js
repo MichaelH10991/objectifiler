@@ -1,14 +1,16 @@
 const fs = require("fs");
 const path = require("path");
 
+const IGNORE_DEFAULT = "index.js";
+
 /**
- * The bit that does everything.
+ * Recursively builds the provided directory as an object.
  * @param {*} there the abs path of the directory thats being exported.
  * @param {*} ignore any files/dirs to be ignored from exporting.
  * @returns hopefully, an object.
  */
-module.exports = (there, ignore = ["index.js", "utils"]) => {
-  const filterer = (file) => !ignore.includes(file);
+module.exports = (there, ignore = []) => {
+  const filterer = (file) => ![IGNORE_DEFAULT, ...ignore].includes(file);
 
   const exporter = (config, directory = there) => {
     const dir = fs.readdirSync(directory).filter(filterer);
