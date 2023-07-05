@@ -5,8 +5,8 @@ const IGNORE_DEFAULT = "index.js";
 
 /**
  * Recursively builds the provided directory as an object.
- * @param {*} there the abs path of the directory thats being exported.
- * @param {*} ignore any files/dirs to be ignored from exporting.
+ * @param {String} there the abs path of the directory thats being exported.
+ * @param {Array} ignore any files/dirs to be ignored from exporting.
  * @returns hopefully, an object.
  */
 module.exports = (there, ignore = []) => {
