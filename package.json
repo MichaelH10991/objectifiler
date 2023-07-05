@@ -1,6 +1,6 @@
 {
   "name": "@iobxt/objectifiler",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A handy exporter module which aims to alevate dev effort",
   "main": "index.js",
   "scripts": {
