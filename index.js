@@ -1,6 +1,12 @@
 const fs = require("fs");
 const path = require("path");
 
+/**
+ * The bit that does everything.
+ * @param {*} there the abs path of the directory thats being exported.
+ * @param {*} ignore any files/dirs to be ignored from exporting.
+ * @returns hopefully, an object.
+ */
 module.exports = (there, ignore = ["index.js", "utils"]) => {
   const filterer = (file) => !ignore.includes(file);
 
