@@ -28,11 +28,17 @@ module.exports = (there, ignore = []) => {
         if (mod.init && !config) {
           return exporter;
         }
-        // TODO: use the path to assign the config
-        // e.g. if file exists under nested/foo
-        // it should look for config under that file
-        // also need to figure out how to export functions
-        // even if corresponding config doesnt exist at all.
+        /**
+         * TODO: use the path to assign the config
+         * e.g. if file exists under nested/foo
+         * it should look for config under that file. This
+         * should be fairly easy to do by passing in the path
+         * along with the name, could also fall back to the
+         * top level config?
+         * Also need to figure out how to export functions when
+         * a corresponding config doesnt exist at all. Again should
+         * be fairly trivial
+         */
         const moduleConfig = config && config[mod.name || exportName];
         return {
           [exportName]: mod.init ? mod.init(moduleConfig) : mod,

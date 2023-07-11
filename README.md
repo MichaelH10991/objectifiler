@@ -36,11 +36,11 @@ Given the following directory sructure;
 
 ```
 src
-  without
-    foobar
-      foo.js
-    bar.js
-  foo.js
+  |- without
+    |- foobar
+      |- foo.js
+    |- bar.js
+  |- foo.js
 index.js
 ```
 
